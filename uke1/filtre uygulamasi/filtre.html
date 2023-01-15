@@ -1,0 +1,51 @@
+ <html>
+ <head>
+ <title>java</title>
+ 
+ 
+ <style type="text/css">
+ img { border:10px solid #CCFF33; filter:alpha(opacity=20); opacity: .4; }
+ </style>
+ </head>
+
+
+
+ <body>
+    <img src="img/bilde1.jpg" width="260px" height="260px" onmouseover="Clear(this)" onmouseout="notClear()" />
+ 
+    <img src="img/bilde2.jpg" width="260px" height="260px" onmouseover="Clear(this)" onmouseout="notClear()" />
+    
+    <img src="img/bilde3.jpg" width="260px" height="260px"  onmouseover="Clear(this)" onmouseout="notClear()" />
+
+</body>
+
+
+
+
+ <script type="text/javascript">
+
+ 
+    function Clear(Bilde){
+    
+        notClear();
+    
+        Bilde.style.cssText="filter:alpha(opacity=100); opacity: 1;";
+    
+        
+    }
+    function notClear(){
+    
+        Bilder=document.getElementsByTagName("img");
+    
+        for(i=0; i<Bilder.length; i++){
+        
+            Bilder[i].style.cssText="filter:alpha(opacity=20); opacity: .4;";
+        }
+    }
+    
+    
+    </script>
+ 
+
+
+ </html>

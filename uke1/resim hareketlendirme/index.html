@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>java</title>
+</head>
+
+
+<body onkeypress="HareketEt(this,-1)">
+
+
+
+<script type="text/javascript">
+<!--
+function HareketEt(Resim, Gidis){
+
+	for(i=0; i<10; i++){
+
+		ResminYeri=parseInt(Resim.style.left);
+
+		if(!ResminYeri) ResminYeri=0;
+
+		Resim.style.left = ResminYeri + i*Gidis + "px";
+	}
+	
+}
+//-->
+</script>
+
+<img src="angry.jpg" width="20%" height="40%"  style="position:absolute;" onmouseover="HareketEt(this,1)" />
+
+</body>
+</html>
