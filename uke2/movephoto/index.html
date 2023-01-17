@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="div1">
+        <img src="img/bilde1.jpg" id="image">
+      </div> 
+      <button onclick="copyImage()">Copy Image</button>
+      <br><br><br><br><br><br><br><br><br>
+      <div id="div2"></div>
+     
+      
+ 
+
+
+<script>
+  function copyImage() {
+    var imgSrc = document.getElementById("image").src;
+    var div2 = document.getElementById("div2");
+    div2.innerHTML += `<img src="${imgSrc}">`;
+  }
+</script>
+
+
+
+
+
+
+
+        <!-- // RESIM AYNI YERDE KALIYOR VE BASKA BIRYRE KOPYALANIYOR
+
+        // function copyImage() {
+        //   var image = document.getElementById("image");
+        //   var div2 = document.getElementById("div2");
+        //   var newImage = image.cloneNode(true);
+        //   div2.appendChild(newImage);
+        // }
+    -->
+      
+   
+    <!-- <div id="div1">
+        <img src="img/bilde1.jpg" id="image">
+      </div> 
+      <button onclick="moveImage()">Move Image</button><br><br><br><br>
+      <div id="div2"></div>
+      <div id="div2"></div>
+      <div id="div2"></div>
+      <div id="div2"></div>
+     
+      
+      <script>
+        bir resim baska biryere tasiniyor
+        
+        function moveImage() {
+          var image = document.getElementById("image");
+          var div2 = document.getElementById("div2");
+          div2.appendChild(image);
+        }
+      </script> -->
+      
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
