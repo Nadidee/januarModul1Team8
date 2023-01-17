@@ -168,3 +168,13 @@ ul li a:hover+.hidden,
 ul li:hover ul {
     display: block;
 }
+
+img {
+  /* aspect-ratio: 3/2; */
+  /* height: ;
+  width: 20%; */
+  /* object-fit: contain; */
+  height: 100px;
+  width: auto;
+
+}
