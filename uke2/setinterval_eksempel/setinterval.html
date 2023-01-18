@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h4> setTimeout fonksiyonu belirli bir zaman sonra çalıştırmaya yarar. </h4>
+    <h4>  setInterval fonksiyonun belirli aralıklar ile sürekli çalışmasını sağlar.</h4>
+    <h4> clearInterval setInterval i durdurmaya yarar</h4>
+    
+    <div id="show"></div><br>
+    <div id="show2"></div>
+</body>
+<script>
+
+
+// 5 saniyede bir selamla yazisi cikar consol da
+function hei() {
+    console.log('Hello World');
+    
+}
+ setInterval(hei, 5000);
+hei()
+////////////////////////////////////////////
+
+
+ // zaman gösterme fonksiyonu
+ function showTime() {
+  
+ 
+  let tarihSaat= new Date();    // yeni tarih döndürür
+
+ 
+  let saat = tarihSaat.toLocaleTimeString(); // yeni zaman döndürü
+
+  console.log(saat)
+  document.getElementById('show').innerHTML= saat
+}
+
+setInterval(showTime, 3000);
+showTime()
+
+//////////////////////////////////////////////7
+
+// div2 de yeralan ornek, clearInterval ile setInterval i durdurmak
+let sayac = 0;
+ 
+// fonksiyon oluşturma
+let interval = setInterval(function(){
+ 
+    // sayacı 1 arttır
+    sayac += 1;
+ 
+    // sayac 5 olduğunda intervali durdur
+    if(sayac === 5){
+        clearInterval(interval);
+    }
+ 
+    // şuanki zamanı göster
+    let dateTime= new Date();
+    let time = dateTime.toLocaleTimeString();
+    document.getElementById('show2').innerHTML= time
+    console.log(time);
+ 
+}, 2000);
+//////////////////////////////////
+
+// setTimeout methodu//////////////
+function selamVer(ifade, kim) {
+  alert( ifade + ', ' + kim );
+}
+
+setTimeout(selamVer, 2000, "Hello", "Nadide"); // Merhaba, Ahmet
+
+</script>
+</html>

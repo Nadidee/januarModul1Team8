@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div id="sonuc">Rastgele üretilen sayı : <span id="sayi"></span></div>
+  <button onclick="sayiUret();">Sayı üret</button>  
+</body>
+<script>
+
+  // 10 ile 20 arasinda butonla rastgele sayi uretmek
+function sayiUret() {
+      document.getElementById("sayi").innerHTML = randomInt(10, 20);
+    }
+
+    function randomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+
+
+
+  // 20'ye kadar rastgele bir dizi dondurur.
+function generateRandomRange() {
+  const max = 20;
+  const random = [];
+  for (var i = 0; i < max; i++) {
+    const temp = Math.floor(Math.random() * max);
+    if (random.indexOf(temp) == -1) {
+     random.push(temp);
+    } else {
+     i--;
+    }
+  }
+  console.log(random)
+ }
+
+ generateRandomRange();
+
+
+ alert(Math.floor(Math.random() * 11)); // 0 ve 10 arasında sayı üretir.
+
+
+</script>
+</html>
