@@ -10,6 +10,7 @@ function copyImage2(){
     const copied2= document.getElementById ('copied');
     let price2=  document.getElementById ('price2').textContent;
     copied2.innerHTML += `<div><img src="${imgsrc2}">Price (Damesko): ${price2} </div>`;
+    
 }
 
 function copyImage3(){
@@ -17,11 +18,13 @@ function copyImage3(){
     const copied3= document.getElementById ('copied');
     let price3=  document.getElementById ('price3').textContent;
     copied3.innerHTML += `<div><img src="${imgsrc3}">Price (Adidas): ${price3}</div>`;
+    
     }
 
 
 function reset() {
-        document.getElementById('copied').innerHTML = ``
+        document.getElementById('copied').innerHTML = ``;
+        
     }
 
 function toggleShow() {
@@ -31,23 +34,7 @@ function toggleShow() {
         } else {
             x.style.display ="none";
         }
+       
     }
 
-//  function summ (){
-// let one= Number(price1.value);
-// let two =Number(price2.value);
-// let three= Number(price3.value);
-
-// one, two, three = document.getElementById('total');
-// let array = [one, two, three]
-
-// var sum = 0;
-
-//     for (var i = 0; i < array.length; i++) {
-//     sum += Number(array[i]);
-// }
-
-//   console.log(sum);
-
-//  }   
-        
+  
