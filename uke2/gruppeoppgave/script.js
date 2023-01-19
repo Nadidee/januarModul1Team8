@@ -1,22 +1,53 @@
 function copyImage(){
 const imgsrc1= document.getElementById('nike').src;
 const copied= document.getElementById ('copied');
-copied.innerHTML += `<img src="${imgsrc1}">`;
+let price1= document.getElementById ('price1').textContent;
+copied.innerHTML += `<div><img src="${imgsrc1}">Price (Nike): ${price1}</div>`;
 }
 
 function copyImage2(){
     const imgsrc2= document.getElementById('dame').src;
     const copied2= document.getElementById ('copied');
-    copied2.innerHTML += `<img src="${imgsrc2}">`;
+    let price2=  document.getElementById ('price2').textContent;
+    copied2.innerHTML += `<div><img src="${imgsrc2}">Price (Damesko): ${price2} </div>`;
 }
 
 function copyImage3(){
     const imgsrc3= document.getElementById('adidas').src;
     const copied3= document.getElementById ('copied');
-    copied3.innerHTML += `<img src="${imgsrc3}">`;
+    let price3=  document.getElementById ('price3').textContent;
+    copied3.innerHTML += `<div><img src="${imgsrc3}">Price (Adidas): ${price3}</div>`;
     }
 
 
 function reset() {
         document.getElementById('copied').innerHTML = ``
     }
+
+function toggleShow() {
+        var x = document.getElementById("copied")
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display ="none";
+        }
+    }
+
+//  function summ (){
+// let one= Number(price1.value);
+// let two =Number(price2.value);
+// let three= Number(price3.value);
+
+// one, two, three = document.getElementById('total');
+// let array = [one, two, three]
+
+// var sum = 0;
+
+//     for (var i = 0; i < array.length; i++) {
+//     sum += Number(array[i]);
+// }
+
+//   console.log(sum);
+
+//  }   
+        
