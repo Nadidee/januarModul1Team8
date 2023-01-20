@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img onclick="addTerjePicWithThis(this)" class="shadow"/>
+    <img onclick="addTerjePicWithThis(this)" class="shadow"/>
+    <img id="mypicture3" onclick="addTerjePic('mypicture3','150px')" class="shadow"/>
+    <script>
+
+       function getPicIfElse(){
+            let mynumber = Math.ceil(Math.random()* 3);
+            console.log(mynumber)
+            if(mynumber === 1){
+                return 'terje1.jpg';
+            } 
+            else if(mynumber === 2) {
+                return 'terje2.jpg';
+            }
+            else {
+               return 'terje3.jpg';
+            }
+        }
+
+        function addTerjePicWithThis(elem) /* sender inn html element*/ {
+            console.log(elem)
+            elem.src = 'terje2.jpg'
+        }
+
+        function addTerjePic(pictureid, height) // sender med id (string) 
+        {
+            let picResult = getPicIfElse();
+            document.getElementById(pictureid).src = picResult;
+            document.getElementById(pictureid).style.height = height;
+        }
+    </script>
+    <style>
+        .shadow{
+            height: 150px;
+            width: 150px;
+            box-shadow: 7px 5px 5px
+        }
+    </style>
+</body>
+</html>
