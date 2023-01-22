@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+ 
 
 </head>
 <body>
@@ -16,37 +15,48 @@
     <img onclick="fromBox('box2')" id="box2" width="300px" height="300px">
     <img onclick="fromBox('box3')" id="box3" width="300px" height="300px">
     <br>
+   <div id="pictureNames"></div>
+
 
     <script>
-        
-      
+             
 
-        function fromBox (pictureid)// sender med id(string)
+        function fromBox (picture)// sender med id(string)
         {
             let picRslt= getPictureIfelse();
-            document.getElementById(pictureid).src= picRslt;
+            document.getElementById(picture).src= picRslt;
+            
         }
 
         function getPictureIfelse()
         {
             let mynumber= Math.floor(Math.random()*3)+1;
+                      
             console.log(mynumber);
 
             if(mynumber==1)
              {
-                return 'img/bilde1.jpg';
-
+                
+                document.getElementById('pictureNames').innerHTML= 'Racoon';
+                 return 'img/bilde1.jpg' ;                
             } 
             else if (mynumber==2)
             {
-               return 'img/bilde2.jpg';
+                document.getElementById('pictureNames').innerHTML= 'EGG';
+                return 'img/bilde2.jpg';
+              
             } 
             else{
+                document.getElementById('pictureNames').innerHTML= 'CAT';
                 return 'img/bilde3.jpg'
+                
             }
-
-
+            
         }
+
+    
+
+       
 
     </script>
 
