@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 20px;
+            padding: 0;         
+            background: -webkit-linear-gradient(to right, #388cd6, #4B79A1); 
+            background: linear-gradient(to right, #1e65a3, #4B79A1); 
+
+        }                
+        
+        
+        .choiceBoxes{
+         
+            width: 1000px;
+            height: 60px;
+            text-align: center;
+        
+        }
+        
+        .firstBox, .secondBox, .thirdBox, .fourthBox{
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+            font-size: 30px;
+          
+        }
+
+        .sentence {
+            font-size: 40px;
+            display: flex;
+            text-align: center;   
+            padding-left: 10px;
+            background-size: cover;
+            margin-top: 20px;
+
+        }
+        
+        
+        </style>
+</head>
+<body>
+<div id="app"></div>
+
+    
+</body>
+<script>
+// model
+let firstWord = "___";
+let secondWord = "___";
+let thirdWord = "___";
+let fourthWord= "___";
+
+
+// view
+updateView();
+function updateView(){
+document.getElementById('app').innerHTML= `
+<div class="conteyner">
+
+    <p class= "sentence">   The incredibly ${firstWord} ${secondWord} ${thirdWord} the woman fried ${fourthWord}  </p>    
+    <div class="firstBox"> Adjektiv:
+        <div class="adjektiv choiceBoxes" onclick="chooseFirstWord(this)">mad</div>
+        <div class="adjektiv choiceBoxes" onclick="chooseFirstWord(this)">sad</div>
+        <div class="adjektiv choiceBoxes" onclick="chooseFirstWord(this)">anxious</div>
+    </div>
+    <div class="secondBox"> Subjekt:
+        <div class="sbj choiceBoxes" onclick="chooseSecondWord(this)">man</div>
+        <div class="sbj choiceBoxes" onclick="chooseSecondWord(this)" >woman</div>
+        <div class="sbj choiceBoxes" onclick="chooseSecondWord(this)">girl</div>
+    </div>
+
+    <div class="thirdBox"> Verb:
+        <div class="verb choiceBoxes" onclick="chooseThirdWord(this)">gives</div> 
+        <div class="verb choiceBoxes" onclick="chooseThirdWord(this)">takes</div>
+        <div class="verb choiceBoxes" onclick="chooseThirdWord(this)">brings</div>
+    </div>
+
+    <div class="fourthBox"> Objekt:
+        <div class="obj choiceBoxes" onclick="chooseFourthWord(this)">potates</div>
+        <div class="obj choiceBoxes" onclick="chooseFourthWord(this)" >dumplings</div>
+        <div class="obj choiceBoxes" onclick="chooseFourthWord(this)">chicken</div>  
+    </div>
+</div>
+`
+}
+
+// controlls
+function chooseFirstWord(choice){
+        firstWord = choice.innerHTML;
+        updateView();
+       
+    }
+
+    function chooseSecondWord(choice){
+        secondWord = choice.innerHTML;
+        updateView();
+
+        
+    }
+
+    function chooseThirdWord(choice){
+        thirdWord = choice.innerHTML;
+        updateView();
+       
+    }
+
+    function chooseFourthWord(choice){
+        fourthWord = choice.innerHTML;
+        updateView();
+        
+    }
+</script>
+</html>
