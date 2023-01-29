@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <div id="nameDiv"> </div>
+ <button onclick="changeName('Thomas')">Thomas</button>
+ <button onclick="changeName('Bjarne')">Bjarne</button>
+ <button onclick="changeName('Nils')">Nils</button>
+
+ <div id="workDiv">Jeg jobber på </div>
+ <button onclick="changeWorkPlace(this)">EVO FITNESS</button> 
+ <button onclick="changeWorkPlace(this)">Verktøysbutikken</button>
+ <button onclick="changeWorkPlace(this)">Jernia</button>
+
+ <div id="tacoDiv"> </div>
+
+ <script>
+    let name = "Thomas";
+    let workPlace = "GET";
+    let favoriteFood = "Taco";
+
+    updateInfo() 
+  
+    function changeWorkPlace(buttonClicked){
+        console.log('her er verdien på variabelen: ' + buttonClicked)
+        console.log('her er innerhtml på knappen jeg har trykt på: ' + buttonClicked.innerHTML)
+        workPlace = buttonClicked.innerHTML
+        updateInfo();
+    }
+
+    function changeName(nameToChangeTo){
+        console.log(nameToChangeTo)
+        name = nameToChangeTo;
+        updateInfo()
+    }
+    function updateInfo(){
+        document.getElementById('nameDiv').innerHTML = `Jeg heter ${name}`;
+        document.getElementById('workDiv').innerHTML = `Jeg jobber på ${workPlace}`;
+        document.getElementById('tacoDiv').innerHTML += `Jeg elsker ${favoriteFood}`;
+    }
+ </script>
+</body>
+</html>

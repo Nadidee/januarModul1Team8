@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+   
+   
+   
+    
+ 
+
+    <script>
+
+    // model
+        let points=0;
+        let firstNum = 0;
+        let secondNum = 0;
+       
+        // view
+        updateView();
+        function updateView(){       
+        document.getElementById('app').innerHTML =`
+            <div class="container">
+                <div id="points"><b>Poeng: ${points}</b></div> 
+                <img src="https://i.gifer.com/7Eqf.gif" alt="">
+                <div> Legg  " < ", " > ", " eller " =</div> <br>
+                <div id="numbers"> <b>${firstNum} </b>  <input id="checkThis" type="text"> </input> <b> ${secondNum} </b> </div> <br>
+                <button onclick="submit()">Submit</button>
+                <button onclick="reset()">Reset</button
+            </div>
+            `;
+    }
+
+    // control
+       function reset(){ 
+            updateNumbers();
+        }
+
+        function updateNumbers(){
+            firstNum = getRandomNumber();
+            secondNum = getRandomNumber();
+            document.getElementById("firstNum").innerHTML = firstNum;
+            document.getElementById("secondNum").innerHTML = secondNum;
+        }
+
+        function getRandomNumber(){
+            return Math.round(Math.random() * 10);
+        }
+
+   
+      
+        function submit(){
+
+            let checkThis = document.getElementById("checkThis").value      
+                 
+                
+            if (checkThis == '>' && firstNum > secondNum ) {
+                points++;
+                
+            }
+            else if (checkThis == '=' && firstNum == secondNum ) {
+                points++;
+            
+            }
+            else if (checkThis == '<' && firstNum < secondNum ) {
+                points++;
+            
+            }
+            
+            else {
+                points--;
+      
+            }
+            updateView();
+        }
+
+
+
+
+        
+
+    </script>
+</body>
+<style>
+   
+    body
+    {
+        
+        margin-top: 5%;
+        margin-left: 30%;
+        font-size: 20px;
+       
+    }
+    img{
+        height: 300px; 
+        width: 300px;
+        margin-top: 20px;
+    }
+    input{
+        width: 100px;
+    }
+    #points{
+        margin-left: 100px;
+        
+    }
+    .container{
+        margin-left: 160px;
+    }
+  
+    
+  
+</style>
+</html>
