@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    #petContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#petImage {
+  width: 100px;
+  height: 100px;
+  background-image: url(img/FelCm2JO1.jpg);
+  background-size: cover;
+}
+
+#hungerBarContainer, #happinessBarContainer {
+  width: 200px;
+  height: 20px;
+  border: 1px solid black;
+  position: relative;
+  margin-top: 10px;
+}
+
+#hungerBar, #happinessBar {
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#hungerBar {
+  background-color: red;
+}
+
+#happinessBar {
+  background-color: blue;
+}
+
+button {
+  margin-top: 10px;
+}
+
+   </style>
+</head>
+<body>
+    <div id="petContainer">
+        <div id="petImage"></div>
+        <div id="hungerBarContainer">
+          <div id="hungerBar"></div>
+        </div>
+        <div id="happinessBarContainer">
+          <div id="happinessBar"></div>
+        </div>
+        <button id="feedButton">Feed</button>
+        <button id="playButton">Play</button>
+      </div>
+      
+</body>
+<script>
+const feedButton = document.getElementById("feedButton");
+const playButton = document.getElementById("playButton");
+const hungerBar = document.getElementById("hungerBar");
+const happinessBar = document.getElementById("happinessBar");
+
+let hungerLevel = 50;
+let happinessLevel = 50;
+
+feedButton.addEventListener("click", function() {
+  hungerLevel += 10;
+  if (hungerLevel > 100) {
+    hungerLevel = 100;
+  }
+  happinessLevel -= 5;
+  if (happinessLevel < 0) {
+    happinessLevel = 0;
+  }
+  updateBars();
+});
+
+playButton.addEventListener("click", function() {
+  hungerLevel -= 10;
+  if (hungerLevel < 0) {
+    hungerLevel = 0;
+  }
+  happinessLevel += 5;
+  if (happinessLevel > 100) {
+    happinessLevel = 100;
+  }
+  updateBars();
+});
+
+function updateBars() {
+  hungerBar.style.width = hungerLevel + "%";
+  happinessBar.style.width = happinessLevel + "%";
+}
+
+
+</script>
+</html>
