@@ -2,7 +2,7 @@
 
 body{
     font-size: 20px;
-    margin-top: 20px; 
+    /* margin-top: 20px;  */
     background: #00F260;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to bottom, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to bottom, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -14,11 +14,16 @@ img {
     height: auto;
   }
   
-  .container {
+.container {
     display: flex;
     justify-content: center;
     justify-items: center;
+    margin-top: 20px;
   }
+ .images{
+  margin-top: 10px;
+ }
+
 
 /* CSS */
 .button-85 {
@@ -92,15 +97,19 @@ img {
     justify-content: center;
     margin-top: 10px;
   }
-  .button_1 {
+.button_1 {
     margin-left: 10px;
     cursor: pointer;
   }
-  .bar {
+.bar {
     margin: 5px 5px;
     font-family: "Montserrat", sans-serif;
   }
-  #reset_btn {
+#reset_btn {
     text-decoration: none;
     color:white;
   }
+#petNames{
+  margin-left: 10em;
+  position: absolute;
+}
