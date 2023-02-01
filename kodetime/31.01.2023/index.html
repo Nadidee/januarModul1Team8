@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+    <script>
+        //Model 
+        let tall1 = 0;
+        let tall2 = 10;
+        let størstTall = '';
+
+        
+        //View
+        updateView()
+        function updateView() {
+            let html = /* html */`
+            <div>Tall1: ${tall1}</div>
+            <div>Tall2: ${tall2}</div>  
+            <div>StørstTall: ${størstTall}</div>
+            <div onclick="økTallet(this)">1</div>
+            <button onclick="increaseNumber()">Increase tall1</button>
+            <button onclick="decreaseNumber()">Decrease num</button>
+            <button onclick="whichIsBiggest()">Finn størst tall</button>
+            `;
+
+            document.getElementById('app').innerHTML = html;
+        }
+
+        //Controller
+        function increaseNumber(){
+            tall1++;
+            updateView();
+            //tall1 += 1;
+            //tall1 = tall1 + 1;
+        }
+        function decreaseNumber(){
+            tall2--;
+            updateView();        
+        }
+        function whichIsBiggest(){            
+            if(tall1 > tall2){
+                størstTall = 'tall1 er størst!'
+            }
+            else if(tall1 < tall2){
+                størstTall = 'tall2 er størst!'
+            }
+            else{
+                størstTall = 'tallene er like'
+            }
+            updateView()  
+        }
+
+        // Annet ræl
+        checkifNotEqual('Linn','linn')
+
+        checkIfEqualAndNotZero(3,3)
+        checkIfEqualOrNotZero(2,3)
+
+        function checkIfEqualAndNotZero(numbah1, numbha2){
+            if(numbah1 == numbha2 && numbah1 != 0){
+                console.log('Tallene er ikke null, og de er like!')
+            }else{
+                console.log('Tallene er enten null, ellers er de ikke like!')
+            }
+        }
+        function checkIfEqualOrNotZero(numbah1, numbha2){
+            if(numbah1 == numbha2 || numbah1 != 0){
+                console.log('Tall1 er ikke null ELLER så er tallene like!')
+            }else{
+                console.log('Tallene er hverken null, eller like!')
+            }
+        }
+
+        function checkifNotEqual(teacherName, anotherTeacherName){
+            if(teacherName !== anotherTeacherName ){
+                console.log('Navnene er ikke like!')
+            }else{
+                console.log('Navnene er like!')
+            }   
+        }
+        
+        function økTallet(divenMin){
+           console.log('Diven min: ' + divenMin)
+           let verdi = divenMin.innerHTML;
+           console.log('verdi variablen: ' + verdi)
+           verdi = verdi +  'er tallet';
+           divenMin.innerHTML = verdi;
+           console.log('div ny innerhtml: ' + divenMin.innerHTML)
+        }
+    </script>
+
+</body>
+</html>
