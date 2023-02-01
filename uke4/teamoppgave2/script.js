@@ -3,13 +3,14 @@
 let v1 = document.getElementById("hungryBar").value;
 let v2 = document.getElementById("happinessBar").value;
 let days = document.getElementById("days");
+let ImageId=  document.getElementById("img_index2").src
 
 let myDays = "";
 let numDays = 0;
 
 
 let petName = prompt('What is pets name');
-document.getElementById("petNames").innerHTML=` I am ${petName}` 
+document.getElementById("petNames").innerHTML=` <b>I am</b> ${petName}` 
  
 
 
@@ -18,7 +19,15 @@ document.getElementById("petNames").innerHTML=` I am ${petName}`
 function feed() {
     if (v1 < 95) {
       document.getElementById("hungryBar").value = v1 += 5;
-    } else {
+    } 
+    
+    else if (v1 > 10 && myDays >= 3){
+      document.getElementById("img_index2").src = "img/caterpillar.png";
+    
+
+    }
+    
+    else {
       document.getElementById("hungryBar").value = v1 += 0;
     }
    
@@ -38,9 +47,6 @@ function feed() {
       document.getElementById("img_index2").src = "img/caterpillar.png";
     }
 
-    if (numDays === 3) {
-      document.getElementById("img_index2").src = "img/caterpillar.png";
-    }
     if (numDays === 6) {
       document.getElementById("img_index2").src = "img/butterflies.png";
     }
@@ -65,13 +71,26 @@ function feed() {
 function hungryDecr() {
     if (v1 > 0) {
       document.getElementById("hungryBar").value = v1 -= 3;
+      if (v1 < 10){
+        document.getElementById("img_index2").src ="img/deadbutterfly.gif";
+      document.getElementById ('farge').style.backgroundImage= 'url(img/purple.jpg)';
+      document.getElementById("petNames").innerHTML=` I'm about to die`;
+      } 
+      if (v1 > 10){
+        document.getElementById('farge').src = 'url(img/Rainbow Blue (1).jpg)'
+      }   //de to siste IF setningene har ingenting med KNAPPEN å gjøre
     } else {
       clearInterval(myIntervalV1);
       clearInterval(myDays);
+      document.getElementById('days').innerHTML = "Game Over";  
+      document.getElementById("img_index2").src ="img/skeleton.gif";    //.style.backgroundImage
+      document.getElementById ('farge').style.backgroundImage= 'url(img/brown.jpg)';
+      document.getElementById('farge').style.color = 'white'
+      document.getElementById("petNames").innerHTML=``
     //   document.getElementById('days').innerHTML = "Game Over";    
-      document.getElementById("img_index2").src ="img/deadbutterfly.gif";
-      document.getElementById ('farge').style.backgroundImage= 'url(img/purple.jpg)';
-      document.getElementById("petNames").innerHTML=` I'm about to die` 
+      // document.getElementById("img_index2").src ="img/deadbutterfly.gif";
+      // document.getElementById ('farge').style.backgroundImage= 'url(img/purple.jpg)';
+      // document.getElementById("petNames").innerHTML=` I'm about to die` 
             
     }
 }
@@ -81,12 +100,18 @@ function hungryDecr() {
 function playDecr() {
     if (v2 > 0) {
       document.getElementById("happinessBar").value = v2 -= 1;
+      if (v2 < 15) {
+        //image
+        //image background
+        // innerhtml text
+      }
     } else {
       clearInterval(myIntervalV2);
       clearInterval(myDays);
       document.getElementById('days').innerHTML = "Game Over";  
       document.getElementById("img_index2").src ="img/skeleton.gif";    //.style.backgroundImage
       document.getElementById ('farge').style.backgroundImage= 'url(img/brown.jpg)';
+      document.getElementById('farge').style.color = 'white'
       document.getElementById("petNames").innerHTML=``
       
     
