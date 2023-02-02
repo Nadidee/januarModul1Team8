@@ -55,6 +55,8 @@ function feed() {
       clearInterval(myIntervalV1);
       clearInterval(myIntervalV2);
       clearInterval(myDays);
+      document.getElementById('farge').style.backgroundImage = '';
+      document.getElementById("petNames").innerHTML = "";
       document.getElementById("days").innerHTML = "Congratulations, You won!!"
       document.getElementById("img_index2").src ="img/butterfly.gif";
     }
@@ -68,29 +70,33 @@ function feed() {
   }
   
   /* This decreases the hungry bar */
-function hungryDecr() {
+  function hungryDecr() {
     if (v1 > 0) {
       document.getElementById("hungryBar").value = v1 -= 3;
       if (v1 < 10){
-        document.getElementById("img_index2").src ="img/deadbutterfly.gif";
-      document.getElementById ('farge').style.backgroundImage= 'url(img/purple.jpg)';
+      document.getElementById("img_index2").src ="img/deadbutterfly.gif";
+      document.getElementById ('farge').style.backgroundImage = 'url(img/purple.jpg)';
       document.getElementById("petNames").innerHTML=` I'm about to die`;
-      } 
-      if (v1 > 10){
-        document.getElementById('farge').src = 'url(img/Rainbow Blue (1).jpg)'
-      }   //de to siste IF setningene har ingenting med KNAPPEN å gjøre
+      } else if (v1 > 5 ){
+        // document.getElementById("img_index2").src = "img/caterpillar.png";
+        document.getElementById('farge').style.backgroundImage = ''
+        document.getElementById("petNames").innerHTML = `I am ${petName}`
+      }
+
+      
+
+      // if (v1 > 10){
+      //   document.getElementById('farge').src = 'url(img/Rainbow Blue (1).jpg)'
+      // }   //de to siste IF setningene har ingenting med KNAPPEN å gjøre
     } else {
       clearInterval(myIntervalV1);
+      clearInterval(myIntervalV2);
       clearInterval(myDays);
       document.getElementById('days').innerHTML = "Game Over";  
       document.getElementById("img_index2").src ="img/skeleton.gif";    //.style.backgroundImage
       document.getElementById ('farge').style.backgroundImage= 'url(img/brown.jpg)';
       document.getElementById('farge').style.color = 'white'
-      document.getElementById("petNames").innerHTML=``
-    //   document.getElementById('days').innerHTML = "Game Over";    
-      // document.getElementById("img_index2").src ="img/deadbutterfly.gif";
-      // document.getElementById ('farge').style.backgroundImage= 'url(img/purple.jpg)';
-      // document.getElementById("petNames").innerHTML=` I'm about to die` 
+      document.getElementById("petNames").innerHTML=`` 
             
     }
 }
@@ -100,13 +106,10 @@ function hungryDecr() {
 function playDecr() {
     if (v2 > 0) {
       document.getElementById("happinessBar").value = v2 -= 1;
-      if (v2 < 15) {
-        //image
-        //image background
-        // innerhtml text
-      }
-    } else {
+    } 
+    if(v2==0) {
       clearInterval(myIntervalV2);
+      clearInterval(myIntervalV1);
       clearInterval(myDays);
       document.getElementById('days').innerHTML = "Game Over";  
       document.getElementById("img_index2").src ="img/skeleton.gif";    //.style.backgroundImage
@@ -127,6 +130,13 @@ function decayValues() {
 }
 
 
+function gameOver(){
+if(v1==0 || v2==0){
+  
+
+}
+
+}
 
 // setInterval(function() {
 //     hunger -= 1;
