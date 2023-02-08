@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+        }
+        body{
+            background-color: #d3c7c7;
+            
+         
+
+
+        }
+        img{
+            width: 600px;
+            height: auto;
+            border-radius: 50px;
+            box-shadow: 12px 12px 6px 6px rgba(166, 166, 180, 0.2);
+        }
+        .image {
+           
+            padding: 20px;  
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -300px;
+            margin-top: -150px;
+           
+        }
+        .inputText{
+            margin-top: 30px;
+            margin-left: 45%;
+        }
+        .answer{
+            position: relative;
+            margin-top: 15%;
+            margin-left: 45%;
+            font-size: 15px;
+
+        }
+        input{
+            font-size: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+
+
+
+    <script>
+        let answer;
+        let answers = [
+        
+            "It is certain.",
+            "It is decidedly so.", 
+            "Without a doubt.", 
+            "Yes, definitely.", 
+            "You may rely on it.", 
+            "As I see it, yes.", 
+            "Most likely.", 
+            "Outlook good.", 
+            "Yes.", 
+            "Signs point to yes.", 
+            "Reply hazy, try again.", 
+            "Ask again later.", 
+            "Better not tell you now.", 
+            "Cannot predict now.", 
+            "Concentrate and ask again.", 
+            "Don't count on it.", 
+            "My reply is no.", 
+            "My sources say no.", 
+            "Outlook not so good.", 
+            "Very doubtful."
+        ];
+      
+        function show(answer) {
+          let html = /*html*/`
+            <input type="text" onchange="magic()" class="inputText" placeholder="ASK ME ANYTHING">
+            <div class="image">
+              <img src="img/magicBall.jpeg" alt="">
+            </div>
+            <p class="answer"> ${answer}</p>
+          `;
+          document.getElementById("app").innerHTML = html;
+        }
+      
+        function magic() {
+          let answer = answers[Math.floor(Math.random() * answers.length)];
+          show(answer);
+        }
+      
+        show('');
+      </script>
+
+
+
+
+</html>

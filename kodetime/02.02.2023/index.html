@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+    </div>
+    
+    <script>
+        //Model
+        let moneyInMachine = 0;
+        let infoText = 'Du har ikke fått noe'
+
+        //View
+        updateView()
+        function updateView(){
+            document.getElementById('app').innerHTML = /*html*/`
+            <img onclick="getBall()" height="150" src="gumball.jpg" >
+            <button onclick="addMoney()">legg på penger</button>
+            <div>Du har lagt på ${moneyInMachine} kr</div>
+            <div>${infoText}</div>
+            `;
+        }
+        
+        // Controller
+        function addMoney(){
+            moneyInMachine = moneyInMachine + 10;
+            updateView();
+        }
+        function getBall(){
+            //gumball koster 20kr
+            if(moneyInMachine >= 20){
+                // brukeren skal få en gumball
+                infoText = getRandomGumballColor()
+                moneyInMachine -= 20;
+            }else{
+                //si fra at man ikke har nok penger
+                infoText = "Du har ikke nok penger"
+            }
+            updateView()
+        }
+        function getRandomGumballColor(){
+           let randomValue =  Math.floor(Math.random() *3)
+           if(randomValue == 0){
+                return 'You got a pink gumball';
+           }else if(randomValue == 1){
+                return 'You got a blue gumball';
+           }else{
+                return 'You got a green gumball'
+           }
+
+        }
+    </script>
+</body>
+</html>

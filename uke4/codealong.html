@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <!-- <div id="a">AAAAAA</div>
+    <div id="b">BBBBBB</div>
+    <div id="c">CCCCCC</div>
+    <div id="d">DDDDDD</div>
+
+
+    <button onclick="copy('a','b')">Bytte A og B</button>
+    <button onclick="copy('a','c')">Bytte A og C</button>
+    <button onclick="copy('a','d')">Bytte A og D</button>
+    <button onclick="copy('b','c')">Bytte B og C</button>
+    <button onclick="copy('b','d')">Bytte B og D</button>
+    <button onclick="copy('c','d')">Bytte C og D</button> -->
+
+</body>
+<script>
+
+    //  model
+    let points = 0;
+    let rounds = 0;
+
+    // view
+    show();
+    function show() {
+        let Html = /*html*/ `
+        <div>${points}
+            
+        </div>
+        <button onclick="getPoints()">+1</button>
+        <div>${rounds}
+            
+        </div>
+
+        `;
+        document.getElementById("app").innerHTML = Html
+
+
+    }
+
+    // Controll
+
+    function getPoints() {
+        points++;
+
+        if (points == 10) {
+            points = 0;
+            rounds++;
+        }
+             show();
+    }
+
+
+
+
+
+    // function copy(id1, id2) {
+    //     let aValue = document.getElementById(id1).innerHTML;
+    //     let bValue = document.getElementById(id2).innerHTML;
+    //     document.getElementById(id2).innerHTML = aValue;
+    //     document.getElementById(id1).innerHTML = bValue;
+    // }
+
+    /*
+      Oppgave: 
+      Lag funksjonen getPoints()
+      Den skal øke variablene points med 1
+      og vise innholdet av variabelen points i div-en med id="app"
+
+      Hvis points blir 10, skal points starte på 0 igjen - og rounds
+      øke med 1. Vis rounds i show.
+    */
+
+
+</script>
+
+</html>
