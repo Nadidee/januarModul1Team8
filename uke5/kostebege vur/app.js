@@ -6,7 +6,7 @@ const süreText = document.querySelector("#süre");
 let öncekiKöstebek;
 let süreDoldu = false;
 let skor = 0;
-let süre = 15;
+let süre = 20;
 
 baslatButon.addEventListener("click", startGame);
 köstebekler.forEach((köstebek) => köstebek.addEventListener("click", vur));
@@ -47,7 +47,7 @@ function süreyiBaslat() {
 }
 
 function startGame() {
-  süre = 15;
+  süre = 20;
   skor = 0;
   süreDoldu = false;
   const interval = setInterval(() => {

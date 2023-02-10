@@ -1,0 +1,79 @@
+body {
+    background-color: white;
+    font-family: Comic Sans MS;
+    width: 1500px;
+    margin: 80px auto;
+    margin-left: 20px;
+    background: url(abc.jpeg);
+    background-size: cover;
+}
+
+h1 {
+    font-family: Comic Sans MS;
+    color: red;
+    font-size: 30px;
+}
+
+h2 {
+    font-family: Comic Sans MS;
+    color: black;
+    font-size: 25px;
+}
+
+#ürünler {
+    color: black;
+    font-family: Comic Sans MS;
+}
+
+#eklemebutonu {
+    border-radius: 30px/30px;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    border-top: 1px solid #999;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #666;
+    background-color: white;
+    width: 100px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#silmebutonu {
+    border-radius: 30px/30px;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    border-top: 1px solid #999;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #666;
+    background-color: white;
+    width: 160px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    border-radius: 30px/30px;
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+    border-top: 1px solid #333;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #666;
+    background-color: white;
+    width: auto;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#urun {
+    border-radius: 30px/30px;
+    height: 25px;
+    width: 250px;
+    height: 20px;
+    outline: none;
+}

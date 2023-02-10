@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock, Paper or Scissors?</title>
+    <style>
+    body{
+        font-size: 40px;
+        font-weight: bold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color:darkslategrey;
+        background: #659999;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #f4791f, #659999);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #f4791f, #659999); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+     img{
+        width: 200px;
+        height: auto;
+     }
+
+     #images, #output{
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+     }
+    </style>
+</head>
+<body>
+    <div id="images">
+        <img src="rock with_6237458.png" onclick="userSelect('rock')">
+        <img src="spiral-notepad-objects.gif" onclick="userSelect('paper')">
+        <img src="scissors illustration_4626875.png" onclick="userSelect('scissors')">
+    </div>
+    <div id="output"></div>
+
+    <script>
+        let selectedByUser = "none";
+        let selectedByComp = "none";
+        let winner = "none";
+        const outputDiv = document.getElementById("output");
+
+
+      
+
+        function userSelect(selected){
+            selectedByUser = selected;
+            computerSelect();
+        }
+
+        function computerSelect(){
+            let randomChoice = Math.floor(Math.random()*3)+1;
+            if(randomChoice == 1) selectedByComp = "rock";
+            if(randomChoice == 2) selectedByComp = "paper";
+            if(randomChoice == 3) selectedByComp = "scissors";
+            checkWinning();
+        }
+        
+        function checkWinning(){
+            if(selectedByUser == "rock" && selectedByComp == "scissors"
+                ||selectedByUser == "paper" && selectedByComp == "rock"
+                ||selectedByUser == "scissors" && selectedByComp == "paper"){
+                    winner = "You";
+                }
+            if(selectedByComp == "rock" && selectedByUser == "scissors"
+                ||selectedByComp == "paper" && selectedByUser == "rock"
+                ||selectedByComp == "scissors" && selectedByUser == "paper"){
+                    winner = "Computer";
+                }
+            if(selectedByUser != "none" && selectedByUser == selectedByComp){
+                winner = "No one";
+            }   
+            showResults();
+        }
+
+        function showResults(){
+            if(winner != "none"){
+            outputDiv.innerHTML = `
+            You chose ${selectedByUser} - computer chose ${selectedByComp} <br>
+            ${winner}  won!
+            `;
+
+            }
+        }
+    
+    </script>
+
+</body>
+</html>
