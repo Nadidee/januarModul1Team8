@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS Otobüs Animasyonu</title>
+    <style>
+      #yol {
+        position: absolute;
+        left: 0;
+        top: 125px;
+        width: 100%;
+        height: 5px;
+        background-color: black;
+      }
+      #otobus {
+        position: absolute;
+        left: 0;
+        top: 100px;
+        width: 80px;
+        height: 50px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="yol"></div>
+    <div id="otobus"></div>
+    <script>
+      // Yolu ve otobüsü seçin ve ilk konumlarını ayarlayın
+      const yol = document.getElementById("yol");
+      const otobus = document.getElementById("otobus");
+      let pozisyon = 0;
+
+      // Otobüsü hareket ettiren fonksiyonu tanımlayın
+      function hareket() {
+        // Otobüsü X ekseninde hareket ettirin
+        pozisyon += 5;
+        otobus.style.left = pozisyon + "px";
+
+        // Yolu da hareket ettirin, böylece otobüs yolda kalır
+        yol.style.backgroundPositionX = pozisyon + "px";
+
+        // Animasyonu tekrarlamak için işlemleri 10 milisaniye sonra yineleyin
+        setTimeout(hareket, 10);
+      }
+
+      // Animasyonu başlatmak için hareket() fonksiyonunu çağırın
+      hareket();
+    </script>
+  </body>
+</html>

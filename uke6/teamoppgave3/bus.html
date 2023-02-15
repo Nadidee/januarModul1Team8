@@ -1,0 +1,83 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700&subset=latin-ext');
+
+
+   
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+}
+body {
+    font-family: 'Comfortaa', cursive;
+    background: url(arka.jpg)no-repeat center center fixed;
+    
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+    animation-name: road_br;
+    animation-duration: 1s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+ 
+}
+.container {
+    width: 95%;
+    margin: 100px auto;
+}
+.car {
+    margin-top: 300px;
+ 
+}
+
+#shop{
+    height: 250px;
+    width: auto;
+}
+
+</style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div> <img src="shop.png" alt="" id="shop"></div>
+        <div class="car" id="car">
+            <img src="arac.png" alt="">
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+  var element = document.getElementById('car');
+  var current_margin = 3;
+  setInterval(function(){
+    if(window.innerWidth<=current_margin+100){
+      current_margin = 3;
+    }
+    new_margin = parseInt(current_margin)+1;
+    current_margin = new_margin;
+    element.style.marginLeft = new_margin;
+  },3);
+
+
+
+
+</script>
+
+</body>
+</html>
