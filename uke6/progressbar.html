@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="select">
+    <option value="0">option 1</option>
+    <option value="1">option 2</option>
+    <option value="2">option 3</option>
+  </select>
+  <br>
+  <progress id="progressBar" max="15" value="0"></progress>
+</body>
+<script>
+const select = document.getElementById("select");
+const progressBar = document.getElementById("progressBar");
+
+select.addEventListener("change", function() {
+  const value = parseInt(select.value);
+  if (value === 0) {
+    progressBar.value += 5;
+  } else if (value === 1) {
+    progressBar.value += 7;
+  } else if (value === 2) {
+    progressBar.value -= 5;
+  }
+});
+
+
+</script>
+</html>
+
+
+  

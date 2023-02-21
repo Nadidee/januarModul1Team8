@@ -52,28 +52,72 @@ body {
 <body>
 
     <div class="container">
-        <div> <img src="shop.png" alt="" id="shop"></div>
-        <div class="car" id="car">
-            <img src="arac.png" alt="">
-
+        <div class=" depo">
+            
+            <div class="car" id="car">
+                <img src="arac.png" alt="" onclick="stop1()">
         </div>
     </div>
-</div>
+
+
+  
+ 
+
 
 
 <script>
 
-  var element = document.getElementById('car');
-  var current_margin = 3;
+ let car1 = document.getElementById('car');
+ let current_margin = 3;
+  
   setInterval(function(){
     if(window.innerWidth<=current_margin+100){
       current_margin = 3;
     }
     new_margin = parseInt(current_margin)+1;
     current_margin = new_margin;
-    element.style.marginLeft = new_margin;
+    car1.style.marginLeft = new_margin;
   },3);
 
+    const select = document.getElementById("select");
+    const progressBar = document.getElementById("progressBar");
+
+
+     
+    function selectionBar(){
+    const value = parseInt(select.value);
+    if (value === 0) {
+        progressBar.value += 5;
+    } else if (value === 1) {
+        progressBar.value += 7;
+    } else if (value === 2) {
+        progressBar.value += 5;
+    }
+}
+
+
+let isMoving = true;
+function stop1(){
+    isMoving = !isMoving;
+  if (isMoving==false){
+    document.getElementById("").innerHTML= `
+    <progress id="progressBar" max="50" value="5"></progress>
+            <select id="select" onchange="selectionBar()">
+                <option value="3"></option>
+                <option value="0">option 1</option>
+                <option value="1">option 2</option>
+                <option value="2">option 3</option>
+            </select>
+            <div id="shop1"><img src="img/shop.png" alt="" id="butik"></div>
+        </div>          `
+
+  }
+  else  if (isMoving==true){
+    document.getElementById("shopping").innerHTML= ``;
+  }
+
+  
+}
 
 
 

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .car {
+            position: absolute;
+            top: 70%;
+            left: -100px;
+            width: 100px;
+            height: 50px;
+           z-index: 3;
+}
+        .car2 {
+            position: absolute;
+            top: 40%;
+           
+            
+           z-index: 3;
+}
+        #redcar{
+             width: 250px;
+            height:auto;
+ }
+
+       
+        .hero {
+            height: 100vh;
+            width: 100%;
+            background-image: url(img/sky.jpg);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow-x: hidden;
+}
+        #road {
+            height: 200px;
+            width: 500%;
+            display: block;
+            /* background-image: url(img/road.png); */
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+          
+}
+
+#butik{
+    width: 200px;
+    height: auto;
+}
+
+#shoping2, #greeting2{
+    position: absolute;
+    top: 45%;
+
+    z-index: 3;
+}
+#progressBar{
+  position:absolute;
+  margin-top: 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="hero">
+      <p>Kulhet Bar</p>
+      <progress id="progressBar" max="50" value="5"></progress> 
+        <div> <img src="img/airplane-take-off.gif" alt=""></div>
+        
+       
+        <div class="car2" id="car2"> <img src="img/automobile-joypixels.gif" alt="" id="redcar" ></div>
+        <div class="car" id="car1"> <img src="img/car.png" alt=""  onclick="stop()" ondblclick="stop2()"></div>
+        <div class="road"> <img src="img/road.png" alt="" id="road"></div>
+        <div id="shopping"> </div>
+        <div id="greeting"></div>
+       
+    </div>
+
+
+    <script>
+let car = document.querySelector('.car');
+let car2 = document.querySelector('.car2');
+let xPosition = -100;
+let xPosition2 = 100;
+let isMoving = true;
+let isMoving2 = true;
+
+
+
+
+
+function checkAnwsers2(){
+  let greeting = document.getElementById("greeting2");
+  let progressBar2 = document.getElementById("progressBar");
+  let value2 = parseInt(greeting.value);
+  if (value2 === 1) {
+    alert (" halooo Takk");
+    progressBar2.value += 5;
+  } else if (value2 === 2) {
+    alert ("heii");
+    progressBar2.value += 7;
+  } else if (value2 === 3) {
+    alert ("noo stakkars");
+    progressBar2.value -= 5;
+  }
+}
+
+
+
+function stop2(){
+  isMoving = !isMoving;
+  if (isMoving==false){
+    document.getElementById("greeting").innerHTML= /*html*/ `
+      
+    <div>
+       
+      <img src="img/heipådeg.gif" alt="" >  
+      <select id="greeting2" class="select2" onchange="checkAnwsers2()">
+        <option value= "0"> Choose </option>
+        <option value= "1"> hfdfsdfs! </option>
+        <option value= "2"> sfsfs </option>
+        <option value= "3"> fhdfhdm</option> 
+      </select>
+          
+     </div>            `
+
+  }
+  else  if (isMoving==true){
+    document.getElementById("greeting").innerHTML= ``;
+  }
+}
+
+
+
+function checkAnwsers() {
+  let shopping = document.getElementById("shoping2");
+  let progressBar = document.getElementById("progressBar");
+  let value = parseInt(shopping.value);
+  if (value === 1) {
+    alert ("30kr. Takk");
+    progressBar.value += 5;
+  } else if (value === 2) {
+    alert ("25kr. Takk");
+    progressBar.value += 7;
+  } else if (value === 3) {
+    alert ("35kr. Takk");
+    progressBar.value += 5;
+  }
+}
+
+function stop(){
+  isMoving = !isMoving;
+  if (isMoving==false){
+    document.getElementById("shopping").innerHTML= /*html*/ `
+      
+    <div>       
+      <img src="img/shop.png" alt="" id="butik">
+      <select id="shoping2" class="select" onchange="checkAnwsers()">     
+        <option value= "0"> Choose </option>
+        <option value= "1"> Caffe </option>
+        <option value= "2"> Tea </option>
+        <option value= "3"> Ice Cream</option> 
+      </select>          
+    </div>            `
+
+  }
+  else  if (isMoving==true){
+    document.getElementById("shopping").innerHTML= ``;
+  }
+
+  
+};
+ 
+
+setInterval(() => {
+  if (isMoving) {
+    xPosition++;
+    car.style.left = xPosition + 'px';
+  
+    if (xPosition > window.innerWidth) {
+      xPosition = -100;
+    }
+  }
+  
+}, 10);
+
+
+setInterval(() => {
+  if (isMoving2) {
+    xPosition2++;
+    car2.style.right = xPosition2 + 'px';
+  
+    if (xPosition2 > window.innerWidth) {
+      xPosition2 = 100;
+    }
+  }
+  
+}, 10);
+    </script>
+</body>
+</html>
